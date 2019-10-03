@@ -38,9 +38,7 @@ namespace comp2084_assignment1.Models
 
                 entity.Property(e => e.AlbumName).IsUnicode(false);
 
-                entity.Property(e => e.Artist).IsUnicode(false);
-
-                entity.HasOne(d => d.ArtistNavigation)
+                entity.HasOne(d => d.Artist)
                     .WithMany(p => p.Albums)
                     .HasForeignKey(d => d.ArtistId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -55,8 +53,6 @@ namespace comp2084_assignment1.Models
             modelBuilder.Entity<Songs>(entity =>
             {
                 entity.Property(e => e.AlbumArt).IsUnicode(false);
-
-                entity.Property(e => e.Artist).IsUnicode(false);
 
                 entity.Property(e => e.SongName).IsUnicode(false);
 

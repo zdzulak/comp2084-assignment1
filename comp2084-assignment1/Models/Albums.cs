@@ -22,17 +22,15 @@ namespace comp2084_assignment1.Models
         [Column("Album_Name")]
         [StringLength(255)]
         public string AlbumName { get; set; }
-        [StringLength(255)]
-        public string Artist { get; set; }
-        [Column("Release_Year", TypeName = "date")]
-        public DateTime ReleaseYear { get; set; }
-        public int Rating { get; set; }
         [Column("Artist_Id")]
         public int ArtistId { get; set; }
+        [Column("Release_Year")]
+        public int ReleaseYear { get; set; }
+        public int Rating { get; set; }
 
         [ForeignKey("ArtistId")]
         [InverseProperty("Albums")]
-        public virtual Artists ArtistNavigation { get; set; }
+        public virtual Artists Artist { get; set; }
         [InverseProperty("Album")]
         public virtual ICollection<Songs> Songs { get; set; }
     }

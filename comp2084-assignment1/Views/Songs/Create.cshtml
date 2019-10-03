@@ -1,0 +1,49 @@
+﻿@model comp2084_assignment1.Models.Songs
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Songs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlbumArt" class="control-label"></label>
+                <input asp-for="AlbumArt" class="form-control" />
+                <span asp-validation-for="AlbumArt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SongName" class="control-label"></label>
+                <input asp-for="SongName" class="form-control" />
+                <span asp-validation-for="SongName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrackLength" class="control-label"></label>
+                <input asp-for="TrackLength" class="form-control" />
+                <span asp-validation-for="TrackLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpotifyLink" class="control-label"></label>
+                <input asp-for="SpotifyLink" class="form-control" />
+                <span asp-validation-for="SpotifyLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlbumId" class="control-label"></label>
+                <select asp-for="AlbumId" class ="form-control" asp-items="ViewBag.AlbumId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -20,7 +20,7 @@ namespace comp2084_assignment1.Models
         [StringLength(100)]
         public string ArtistName { get; set; }
 
-        [InverseProperty("ArtistNavigation")]
+        [InverseProperty("Artist")]
         public virtual ICollection<Albums> Albums { get; set; }
     }
 }

@@ -17,8 +17,6 @@ namespace comp2084_assignment1.Models
         [Column("Song_Name")]
         [StringLength(255)]
         public string SongName { get; set; }
-        [StringLength(255)]
-        public string Artist { get; set; }
         [Required]
         [Column("Track_Length")]
         [StringLength(255)]
