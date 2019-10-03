@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <UserSecretsId>aspnet-comp2084_assignment1-67C076A3-5A13-48C3-8BCB-F7EDDF98F8B7</UserSecretsId>
+    <UserSecretsId>aspnet-comp2084_assignment1-2566B9AE-D8AE-4820-BCAA-B027DF8EA435</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>comp2084_assignment1</RootNamespace>
   </PropertyGroup>
