@@ -24,11 +24,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ArtistName)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ArtistId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ArtistId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ArtistId">Delete</a>
-            </td>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ArtistId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ArtistId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ArtistId">Delete</a>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ArtistId">Details</a>
+                </td>
+            }
         </tr>
 }
     </tbody>

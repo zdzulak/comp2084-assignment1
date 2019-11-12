@@ -43,6 +43,17 @@ namespace comp2084_assignment1
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<zackalbumsContext>();
 
+            // Google authentication
+            services.AddAuthentication()
+        .AddGoogle(options =>
+        {
+            IConfigurationSection googleAuthNSection =
+                Configuration.GetSection("Authentication:Google");
+
+            options.ClientId = googleAuthNSection["ClientId"];
+            options.ClientSecret = googleAuthNSection["ClientSecret"];
+        });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

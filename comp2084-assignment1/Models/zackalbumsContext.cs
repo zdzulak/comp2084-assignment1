@@ -1,10 +1,11 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace comp2084_assignment1.Models
 {
-    public partial class zackalbumsContext : DbContext
+    public partial class zackalbumsContext : IdentityDbContext
     {
         public zackalbumsContext()
         {
@@ -30,6 +31,9 @@ namespace comp2084_assignment1.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // fix from https://stackoverflow.com/questions/39798317/identityuserloginstring-requires-a-primary-key-to-be-defined-error-while-addi/47319471
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
             modelBuilder.Entity<Albums>(entity =>
