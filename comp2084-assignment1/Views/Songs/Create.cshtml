@@ -12,11 +12,12 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <!-- This is not needed as the Album Art comes from the Album table
+                <div class="form-group">
                 <label asp-for="AlbumArt" class="control-label"></label>
                 <input asp-for="AlbumArt" class="form-control" />
                 <span asp-validation-for="AlbumArt" class="text-danger"></span>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label asp-for="SongName" class="control-label"></label>
                 <input asp-for="SongName" class="form-control" />

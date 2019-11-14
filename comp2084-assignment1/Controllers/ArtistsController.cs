@@ -21,7 +21,7 @@ namespace comp2084_assignment1.Controllers
         // GET: Artists
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Artists.ToListAsync());
+            return View(await _context.Artists.OrderBy(c => c.ArtistName).ToListAsync());
         }
 
         // GET: Artists/Details/5

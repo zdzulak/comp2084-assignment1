@@ -15,7 +15,6 @@
     <thead>
         <tr>
             <th>
-                Album Art
             </th>
             <th>
                 Song
@@ -37,7 +36,7 @@
         {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AlbumArt)
+                @Html.DisplayFor(modelItem => item.Album.AlbumArt)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SongName)
@@ -46,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.TrackLength)
             </td>
             <td>
-                <a href="@Html.DisplayFor(modelItem => item.SpotifyLink)" target="_blank">Spotify Link</a>
+                <a href="@Html.DisplayFor(modelItem => item.SpotifyLink)" target="_blank"><img src="~/images/spotify.png" alt="Spotify Logo" height="25" width="25"></a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Album.AlbumName)

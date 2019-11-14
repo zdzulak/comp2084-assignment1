@@ -22,7 +22,7 @@ namespace comp2084_assignment1.Controllers
         public async Task<IActionResult> Index()
         {
             var zackalbumsContext = _context.Albums.Include(a => a.Artist);
-            return View(await zackalbumsContext.ToListAsync());
+            return View(await zackalbumsContext.OrderBy(c => c.AlbumName).ToListAsync());
         }
 
         // GET: Albums/Details/5

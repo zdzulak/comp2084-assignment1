@@ -26,6 +26,8 @@ namespace comp2084_assignment1.Models
         public int ArtistId { get; set; }
         [Column("Release_Year")]
         public int ReleaseYear { get; set; }
+        [Range(0, 10,
+        ErrorMessage = "Rating must be between 0 and 10.")]
         public int Rating { get; set; }
 
         [ForeignKey("ArtistId")]
