@@ -35,9 +35,18 @@
         @foreach (var item in Model)
         {
         <tr>
+            @if(String.IsNullOrEmpty(item.Album.AlbumArt))
+            {
             <td>
-                @Html.DisplayFor(modelItem => item.Album.AlbumArt)
+                <img src="~/images/placeholderAlbumCover.png" alt="Placeholder Album Cover" height="50" width="50" />
             </td>
+            }
+            else
+            {
+            <td>
+                <img src="~/images/@Html.DisplayFor(modelItem => item.Album.AlbumArt)" alt="Placeholder Album Cover" height="50" width="50" />
+            </td>
+            }
             <td>
                 @Html.DisplayFor(modelItem => item.SongName)
             </td>
@@ -68,3 +77,5 @@
         }
     </tbody>
 </table>
+
+
