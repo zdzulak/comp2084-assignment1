@@ -12,7 +12,7 @@
     </p>
 }
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
         <tr>
             <th>
             </th>
@@ -34,7 +34,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
+        <tr class="table-primary">
             @if(String.IsNullOrEmpty(item.Album.AlbumArt))
             {
             <td>
